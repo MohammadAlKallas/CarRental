@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="LoadCars()">
+    <nav>
+      <div class="logo">
+        <img src="./Images/car_50px.png" width="40" height="40" />
+        <h1>Car Rental</h1>
+      </div>
+      <ul>
+        <li>
+          <a href="./Home.html">Home</a>
+        </li>
+        <li>
+          <a class="active" href="./Cars.html">Cars</a>
+        </li>
+        <li>
+          <a href="./AboutUS.html"> About US</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="Cars">
+      <header>We have a wide variety of cars for all your needs</header>
+      <table class="items">
+        <thead>
+          <tr>
+            <td>Car Type</td>
+            <td>Production Date</td>
+            <td>Rent Type</td>
+            <td>Rental Value/Tax included</td>
+            <td>Image</td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="CarDetails">
+      <div class="Items"></div>
+      <div class="ControlButtons">
+        <a id="CancelBtn" onclick="Cancel()">Cancel</a>
+        <a id="ContinuationBtn" onclick="Continuation()">Continuation</a>
+      </div>
+    </div>
+
+    <div class="SubmissionForm">
+      <div class="form-title">Submission Form</div>
+      <table>
+        <tr>
+          <td>
+            <div class="FormElement">
+              <label for="FullName">Full Name (Arabic)</label>
+              <input type="text" name="FullName" id="FullName" />
+            </div>
+          </td>
+          <td>
+            <div class="FormElement">
+              <label for="NationalNo">National Number</label>
+              <input
+                type="number"
+                name="NationalNo"
+                id="NationalNo"
+                onkeypress="if (this.value.length > 10) return false"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="FormElement">
+              <label for="BirthDate">Birth Date</label>
+              <input type="date" name="BirthDate" id="BirthDate" />
+            </div>
+          </td>
+          <td>
+            <div class="FormElement">
+              <label for="MobileNumber">Mobile Number</label>
+              <input
+                type="number"
+                name="MobileNumber"
+                id="MobileNumber"
+                onkeypress="if (this.value.length > 9) return false"
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="FormElement">
+              <label for="Email">Email</label>
+              <input type="email" name="Email" id="Email" />
+            </div>
+          </td>
+          <td>
+            <div class="FormElement">
+              <label for="NumberDaysRent" id="NumberDaysRentLabel"
+                >Number Days Rent</label
+              >
+              <input
+                type="number"
+                name="NumberDaysRent"
+                id="NumberDaysRent"
+                required
+              />
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="captcha">
+              <label for="captcha-input">Enter Captcha</label>
+              <div class="preview"></div>
+              <div class="captcha-form">
+                <input
+                  type="text"
+                  id="captcha-form"
+                  placeholder="Enter captcha text"
+                  required
+                />
+                <button class="captcha-refresh" onclick="generateCaptcha()">
+                  <img
+                    src="./Images/refresh_40px.png"
+                    alt="captcha-refresh"
+                    width="20"
+                    height="20"
+                  />
+                </button>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <div class="FormButton">
+        <button id="Send-btn" onclick="SubmitForm()">Apply</button>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
